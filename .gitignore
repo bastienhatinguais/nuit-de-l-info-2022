@@ -1,0 +1,8 @@
+/.idea
+/node_modules
+.env
+/logs
+/dist
+swagger_output.json
+package-lock.json
+npm-debug.log
