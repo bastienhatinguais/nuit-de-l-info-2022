@@ -14,6 +14,10 @@ const router = createBrowserRouter([
   {
     path:'historiqueQuizz',
     element: <HistoriqueQuizz/>
+  },
+  {
+    path:'quizz',
+    element: <Quizz/>
   }
 ]);
 
