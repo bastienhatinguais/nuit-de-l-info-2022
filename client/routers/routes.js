@@ -1,14 +1,18 @@
-import React, { Fragment } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import React from 'react';
+import { createBrowserRouter } from 'react-router-dom';
 
 import Accueil from '../components/Accueil';
+import LoginForm from '../components/authentification/loginForm';
 
-const Router = () => (
-  <Fragment>
-    <Routes>
-      <Route exact path="/" element={<Accueil />} />
-    </Routes>
-  </Fragment>
-);
+const router = createBrowserRouter([
+  {
+    path: '/login',
+    element: <LoginForm />,
+  },
+  {
+    path: '/',
+    element: <Accueil />,
+  },
+]);
 
-export default Router;
+export default router;

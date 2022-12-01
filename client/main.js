@@ -4,7 +4,8 @@ import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { blueGrey } from '@mui/material/colors';
 
 import App from './containers/app/AppContainer';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { RouterProvider, Route } from 'react-router-dom';
+import router from './routers/routes';
 
 const mountNode = document.getElementById('root');
 
@@ -21,9 +22,9 @@ const theme = createTheme({
 ReactDOM.render(
   <Suspense fallback={<div>Error! Please refresh the page</div>}>
     <ThemeProvider theme={theme}>
-      <Router>
-        <App />
-      </Router>
+      <React.StrictMode>
+        <RouterProvider router={router} />
+      </React.StrictMode>
     </ThemeProvider>
   </Suspense>,
   mountNode
