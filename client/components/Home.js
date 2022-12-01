@@ -3,6 +3,7 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import { Button, Grid, Typography } from "@mui/material"
 import { Container } from "@mui/system"
+import { Link } from "react-router-dom"
 
 function Home() {
     return (
@@ -36,7 +37,7 @@ function Home() {
                     md={4}
                     style={{ display: 'flex', justifyContent: "center" }}
                 >
-                    <Button variant="contained">Classement joueurs</Button>
+                  <Link to={'classement'}>  <Button variant="contained">Classement joueurs</Button></Link>
                 </Grid>
             </Grid>
         </Container>
