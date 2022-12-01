@@ -20,7 +20,9 @@ function Home() {
                     md={4}
                     style={{ display: 'flex', justifyContent: "center" }}
                 >
+                    <Link to={"quizz"}>
                     <Button variant="contained">Lancer un Quizz</Button>
+                    </Link>
                 </Grid>
                 <Grid
                     item

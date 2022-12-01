@@ -4,6 +4,7 @@ import { createBrowserRouter } from 'react-router-dom';
 import Home from '../components/Home';
 import HistoriqueQuizz from '../components/Historique/HistoriqueQuizz';
 import Classement from '../components/Classement/Classement';
+import Quizz from '../components/Quizz/Quizz';
 
 const router = createBrowserRouter([
  
@@ -18,6 +19,10 @@ const router = createBrowserRouter([
   {
     path:'historiqueQuizz',
     element: <HistoriqueQuizz/>
+  },
+  {
+    path:'quizz',
+    element: <Quizz/>
   }
 ]);
 
