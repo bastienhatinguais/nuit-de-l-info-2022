@@ -8,18 +8,19 @@ function TestOpenAi() {
   const [texte, setTexte] = useState('');
   const [image, setImage] = useState("")
   const configuration = new Configuration({
-    apiKey: "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",
+    apiKey: "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",
   });
   const openai = new OpenAIApi(configuration);
   const getImage = async ()=>{
     const response = await openai.createImage({
         prompt: texte,
         n: 1,
+        response_format:'b64_json',
         size: "1024x1024",
       });
       return response
   }
- 
+  
   return (
     <Box
       component="form"
@@ -47,7 +48,7 @@ function TestOpenAi() {
           onClick={() => {
             getImage().then((response)=>{
                 console.log("REPONSE:",response)
-                setImage(response.data.data[0].url)
+                setImage("data:image/jpeg;base64,"+response.data.data[0].b64_json)
             })
           }}
         >
