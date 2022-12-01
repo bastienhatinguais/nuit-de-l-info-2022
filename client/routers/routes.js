@@ -1,12 +1,13 @@
 import React, { Fragment } from 'react';
 import { Routes, Route } from 'react-router-dom';
 
-import Accueil from '../components/Accueil';
+import Home from '../components/Home';
+
 
 const Router = () => (
   <Fragment>
     <Routes>
-      <Route exact path="/" element={<Accueil />} />
+      <Route exact path="/" element={<Home />} />
     </Routes>
   </Fragment>
 );
