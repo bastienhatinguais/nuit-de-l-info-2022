@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import TableauPost from './post/TableauPost';
-import { Container, Box, IconButton, Modal } from '@mui/material';
+import { Container, Box, IconButton, Modal, Button } from '@mui/material';
 import Typography from '@mui/material/Typography';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import FormPost from './post/FormPost';
 import { api } from '../utils/api';
+import { Link } from 'react-router-dom';
 
 function Accueil() {
   const [openModal, setOpenModal] = useState(false);
@@ -84,6 +85,9 @@ function Accueil() {
           </Typography>
         </Box>
       </Modal>
+      <Link to="/login">
+        <Button>Se connecter</Button>
+      </Link>
     </Container>
   );
 }
