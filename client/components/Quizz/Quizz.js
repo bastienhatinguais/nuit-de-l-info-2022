@@ -6,12 +6,9 @@ function Quizz() {
 
   return (
     <Container>
-    <Grid 
-                container 
-            >
                 <Grid 
                     container 
-                    direction="row"
+                    display="flex"
                     //Center the items horizontally
                     justifyContent="center"
                     //Center the items vertically
@@ -26,15 +23,14 @@ function Quizz() {
         </Grid>
         <Grid 
             container 
-            direction="row"
         >
-        <Grid item md={12}>
-        <Button variant="contained">Question</Button>
+        <Grid item 
+                    style={{ display: 'flex', justifyContent: "center" }}>
+        <Button item variant="contained">Question</Button>
         </Grid>
         </Grid>
                 <Grid 
                     container 
-                    direction="row"
                 >
                 <Grid item md={6}>
                 <Button variant="contained">Réponse 1</Button>
@@ -46,7 +42,6 @@ function Quizz() {
                 </Grid>
                 <Grid
                     container
-                    direction="row"
                 >
                 <Grid item md={6}>
                 <Button variant="contained">Réponse 3</Button>
@@ -56,10 +51,10 @@ function Quizz() {
     <Button variant="contained">Réponse 4</Button>
     </Grid>
             </Grid>
-            <Grid item md={12}>
-        <Button variant="contained">Valider</Button>
-        </Grid>
-            </Grid>
+        <Button variant="contained"
+        style={{ display: 'flex', justifyContent: "center" }}>
+        
+        Valider</Button>
     </Container>
   );
 }
