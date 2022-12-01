@@ -1,8 +1,9 @@
 import React from 'react';
 import { createBrowserRouter } from 'react-router-dom';
-import Classement from '../components/Classement/Classement';
 
 import Home from '../components/Home';
+import HistoriqueQuizz from '../components/Historique/HistoriqueQuizz';
+import Classement from '../components/Classement/Classement';
 
 const router = createBrowserRouter([
  
