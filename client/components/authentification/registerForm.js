@@ -35,6 +35,14 @@ import {
               margin="normal"
               required
               fullWidth
+              name="Prenom"
+              label="Prenom"
+              id="Prenom"
+            />
+            <TextField
+              margin="normal"
+              required
+              fullWidth
               name="Description"
               label="Description"
               placeholder ="Une petite description de vous, juste vous :)"
