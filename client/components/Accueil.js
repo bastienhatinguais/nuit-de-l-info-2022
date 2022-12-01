@@ -4,6 +4,7 @@ import { Container, Box, IconButton, Modal } from '@mui/material';
 import Typography from '@mui/material/Typography';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import FormPost from './post/FormPost';
+import TestOpenAi from './testOpenAi/TestOpenAi';
 import { api } from '../utils/api';
 
 function Accueil() {
@@ -11,6 +12,7 @@ function Accueil() {
   const [posts, setPosts] = useState([]);
   const handleOpenModal = () => setOpenModal(true);
   const handleCloseModal = () => setOpenModal(false);
+
 
   const getPosts = () => {
     api()
@@ -62,7 +64,7 @@ function Accueil() {
     <Container>
       <Typography variant="h3">Gestionnaire de post</Typography>
       <Box m={2} pt={3}>
-        <TableauPost posts={posts} deletePost={deletePost}></TableauPost>
+        <TestOpenAi/>
       </Box>
       <Box align="right">
         <IconButton aria-label="create" color="success" size="large" onClick={handleOpenModal}>
