@@ -17,7 +17,7 @@ export default function AuthProvider({ children }) {
       })
       .then((result) => {
         setUser({ token: result.token, nom: result.nom, prenom: result.prenom });
-        console.log(user);
+        setLocalStorage('token', result.token);
       })
       .catch((er) => {
         console.log(er);
@@ -26,6 +26,7 @@ export default function AuthProvider({ children }) {
 
   let logout = () => {
     setUser(null);
+    clearLocalStorage();
     navigate('/');
   };
 

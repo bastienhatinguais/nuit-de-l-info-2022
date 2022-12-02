@@ -1,6 +1,7 @@
 import axios from 'axios';
 
 import { API_URL } from '../config/config';
+import { getLocalStorage } from './storage';
 
 export function api() {
   const api = axios.create({
@@ -8,6 +9,7 @@ export function api() {
     headers: {
       Accept: 'application/json',
       'Content-Type': 'application/json',
+      'X-XSRF-TOKEN': getLocalStorage('token'),
     },
     responseType: 'json',
   });
