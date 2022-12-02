@@ -3,6 +3,7 @@ import { Container } from '@mui/system'
 import React, { useEffect, useState } from 'react'
 import TableauQuizz from './Table/TableauQuizz';
 
+
 const HistoriqueQuizz = () => {
 
   const [historique, setHistorique] = useState([])
@@ -21,6 +22,7 @@ const HistoriqueQuizz = () => {
       <Typography variant="h3">Historique Quizz</Typography>
       <TableauQuizz historique={historique}/>
     </Container>
+    
   )
 }
 

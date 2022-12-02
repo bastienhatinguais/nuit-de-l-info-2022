@@ -3,11 +3,22 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import { Button, Grid, Typography } from "@mui/material"
 import { Container } from "@mui/system"
+import { HiddenEasterEgg } from "react-hidden-easter-egg";
+import { ConfettiCanvas } from "react-raining-confetti";
 
 function Home() {
     return (
         <Container>
             <Typography variant="h3">Le sida c'est trop génial</Typography>
+            <HiddenEasterEgg
+                code={["s","e","x","e"]}
+                resetEggMs={10000}
+                cb={() => console.log("start raining")}
+                key="13123"
+            >
+                Incroyable tu as trouvé un easter egg ! Bravo ! 
+                <ConfettiCanvas active={true} fadingMode="LIGHT" stopAfterMs={5000} />
+            </HiddenEasterEgg>
             <Grid
                 container
                 spacing={2}
@@ -41,6 +52,7 @@ function Home() {
                     <Button variant="contained">Classement joueurs</Button>
                 </Grid>
             </Grid>
+            Je suis un mot de 4 lettres commençant par S et finissant par ma deuxième lettre.
         </Container>
     )
 }
