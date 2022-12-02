@@ -6,7 +6,7 @@ import React,{ useState, useEffect } from 'react';
 import CardQuestion from "../utilitaires/CardQuestion"
 import CardAnswer from "../utilitaires/CardAnswer";
 import CardExplication from '../utilitaires/CardExplication';
-import ProgressBar from './ProgresseBar/progressBar';
+import ProgressBar from './ProgressBar/progressBar';
 
 function PageQuizz() {
 
