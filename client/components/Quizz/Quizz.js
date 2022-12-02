@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Container, Grid,Button, Item } from '@mui/material';
-import ProgressBar from './progressBar';
-import Timer from '../Timer/Timer';
+import ProgressBar from '../PageQuizz/ProgressBar/ProgressBar';
+import Timer from '../PageQuizz/Timer/Timer';
 
 function Quizz() {
 

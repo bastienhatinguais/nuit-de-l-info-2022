@@ -16,6 +16,7 @@ function Home() {
                 container
                 alignItems="center"
                 justifyContent="center"
+                spacing={10}
                 style={{ minHeight: '90vh' }}
             >
                 <Grid
@@ -35,7 +36,7 @@ function Home() {
                         <Link to={"PageQuizz"}>
                             <Button variant="contained"
                                 style={{
-                                    minWidth: '30vh',
+                                    minWidth: '40vh',
                                     minHeight: '10vh',
                                     backgroundColor: '#F2577C',
                                     borderRadius: '20px',
@@ -48,7 +49,7 @@ function Home() {
                     >
                         <Link to={'classement'}>  <Button variant="contained"
                             style={{
-                                minWidth: '30vh',
+                                minWidth: '40vh',
                                 minHeight: '10vh',
                                 backgroundColor: '#F2577C',
                                 borderRadius: '20px',
@@ -62,7 +63,7 @@ function Home() {
                         <Link to={"historiqueQuizz"}>
                             <Button variant="contained"
                                 style={{
-                                    minWidth: '30vh',
+                                    minWidth: '40vh',
                                     minHeight: '10vh',
                                     backgroundColor: '#F2577C',
                                     borderRadius: '20px',
@@ -74,6 +75,7 @@ function Home() {
                 <Grid
                     container
                     xs={12}
+                    sx={{ visibility: { xs: 'hidden', sm: 'visible' } }}
                     md={9}
                     alignItems="center"
                     direction="column"
