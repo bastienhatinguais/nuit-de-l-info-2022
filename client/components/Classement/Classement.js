@@ -28,7 +28,9 @@ function Classement() {
     <Container style={{ marginBottom: 20 }}>
       <Typography variant="h3" style={{ marginBottom: 20 }}>Classement des joueurs</Typography>
       <Grid container spacing={2} style={{
-        backgroundColor: '#E2EEFC'
+        backgroundColor: '#E2EEFC',
+        borderRadius: '20px',
+        padding: '20px',
       }}>
         <Grid item xs={4}
         >
