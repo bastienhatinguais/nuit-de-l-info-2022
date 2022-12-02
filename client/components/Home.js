@@ -3,11 +3,13 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import { Button, Grid, Typography } from "@mui/material"
 import { Container } from "@mui/system"
+import Timer from './Timer/Timer';
 
 function Home() {
     return (
         <Container>
             <Typography variant="h3">Le sida c'est trop génial</Typography>
+            <Timer/>
             <Grid
                 container
                 spacing={2}
