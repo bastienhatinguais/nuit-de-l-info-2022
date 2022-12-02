@@ -6,27 +6,27 @@ import schema from '../validators/question.validator';
 const router = express.Router();
 
 router
-    .route('/')
-    .post(validate(schema.storeQuestion), (req, res) => {
-        quizzCtrl.store(req, res);
-    })
-    .get((req, res) => {
-        quizzCtrl.findAll(req, res);
-    });
+  .route('/')
+  .post(validate(schema.storeQuestion), (req, res) => {
+    quizzCtrl.store(req, res);
+  })
+  .get((req, res) => {
+    quizzCtrl.generateQuestions(req, res);
+  });
 
 router
-    .route('/:id')
+  .route('/:id')
 
-.get((req, res) => {
+  .get((req, res) => {
     quizzCtrl.findById(req, res);
-})
+  })
 
-.put(validate(schema.updateQuestion), (req, res) => {
+  .put(validate(schema.updateQuestion), (req, res) => {
     quizzCtrl.update(req, res);
-})
+  })
 
-.delete((req, res) => {
+  .delete((req, res) => {
     quizzCtrl.destroy(req, res);
-});
+  });
 
 export default router;

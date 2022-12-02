@@ -9,7 +9,7 @@ import Question from '../models/question.model';
  * @returns {*}
  */
 export function findAll(req, res) {
-  Question.fetchAll()
+  Question.fetchAll({ withRelated: ['reponses'] })
     .then((questions) => {
       res.json({
         error: false,
