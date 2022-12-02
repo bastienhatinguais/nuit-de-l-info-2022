@@ -12,7 +12,7 @@ const router = createBrowserRouter([
  
   {
     path: '/',
-    element: <HistoriqueQuizz />,
+    element: <Home />,
   },
   {
     path:'classement',
