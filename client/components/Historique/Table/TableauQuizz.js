@@ -1,20 +1,20 @@
-import { TableContainer, Table, TableHead, TableRow, TableCell, TableBody } from '@mui/material'
+import { TableContainer, Table, TableHead, TableRow, TableCell, TableBody, Typography } from '@mui/material'
 import React from 'react'
 
 
 const TableauQuizz = ({historique}) => {
 
     return (
-        <TableContainer>
+        <TableContainer style={{ borderRadius: "20px" }}>
             <Table>
-                <TableHead>
+                <TableHead style={{ backgroundColor: "#8CB4E3",fontSize: 44 }}>
                     <TableRow>
-                        <TableCell>Date</TableCell>
-                        <TableCell>Score</TableCell>
-                        <TableCell>Durée</TableCell>
+                        <TableCell><Typography sx={{ fontSize: "3rem" }}><img src="img/date-limite.png" width={"40rem"}/>Date</Typography> </TableCell>
+                        <TableCell><Typography sx={{ fontSize: "3rem" }}><img src="img/score-eleve.png" width={"40rem"}/>Score</Typography> </TableCell>
+                        <TableCell><Typography sx={{ fontSize: "3rem" }}><img src="img/sablier.png" width={"40rem"}/>Durée</Typography> </TableCell>
                     </TableRow>
                 </TableHead>
-                <TableBody>
+                <TableBody style={{ backgroundColor: "#E2EEFC" }}>
                     {
                         historique.map((quizz=>{
                             return(

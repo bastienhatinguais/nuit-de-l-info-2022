@@ -18,7 +18,7 @@ const HistoriqueQuizz = () => {
 
   return (
     <Container>
-      <Typography variant="h3">Historique Quizz</Typography>
+      <Typography variant="h3" style={{ marginBottom: 20 }}>Historique Quizz</Typography>
       <TableauQuizz historique={historique}/>
     </Container>
   )
