@@ -2,6 +2,7 @@ import express from 'express';
 import * as postCtrl from '../controllers/post.controller';
 import validate from '../config/joi.validate';
 import schema from '../validators/post.validator';
+import autorisation from '../middlewares/authentification';
 
 const router = express.Router();
 
@@ -10,7 +11,7 @@ router
   .post(validate(schema.storePost), (req, res) => {
     postCtrl.store(req, res);
   })
-  .get((req, res) => {
+  .get(autorisation, (req, res) => {
     postCtrl.findAll(req, res);
   });
 
