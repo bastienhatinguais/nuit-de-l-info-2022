@@ -39,7 +39,7 @@ function Home() {
                                     minHeight: '10vh',
                                     backgroundColor: '#F2577C',
                                     borderRadius: '20px',
-                                }}>Lancer un Quizz</Button>
+                                }}><img src="img/idee-ampoule.png" width={"40rem"}/>Lancer un Quizz</Button>
                         </Link>
                     </Grid>
                     <Grid
@@ -52,7 +52,7 @@ function Home() {
                                 minHeight: '10vh',
                                 backgroundColor: '#F2577C',
                                 borderRadius: '20px',
-                            }}>Classement joueurs</Button></Link>
+                            }}><img src="img/trophee-du-championnat.png" width={"40rem"}/>Classement joueurs</Button></Link>
                     </Grid>
                     <Grid
                         item
@@ -66,7 +66,7 @@ function Home() {
                                     minHeight: '10vh',
                                     backgroundColor: '#F2577C',
                                     borderRadius: '20px',
-                                }}>Historique des Quizz</Button>
+                                }}><img src="img/date-limite.png" width={"40rem"}/>Historique des Quizz</Button>
                         </Link>
                     </Grid>
 
@@ -88,11 +88,11 @@ function Home() {
                         borderRadius: '20px',
                     }}>
                         <CardContent>
-                        <CardMedia
-                            component="img"
-                            image="img/accueil.png"
-                            alt="Image de la carte"
-                        />
+                            <CardMedia
+                                component="img"
+                                image="img/accueil.png"
+                                alt="Image de la carte"
+                            />
                         </CardContent>
                     </Card>
                 </Grid>
