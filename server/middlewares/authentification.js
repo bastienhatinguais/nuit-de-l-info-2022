@@ -1,3 +1,7 @@
+import HttpStatus from 'http-status-codes';
+import jwt from 'jsonwebtoken';
+import Utilisateur from '../models/utilisateur.model';
+
 /**
  * Route authentication middleware to verify a token
  *
@@ -8,12 +12,7 @@
  */
 
 export default (req, res, next) => {
-  const authorizationHeader = req.headers['authorization'];
-  let token;
-
-  if (authorizationHeader) {
-    token = authorizationHeader.split(' ')[1];
-  }
+  const token = req.headers['authorization'];
 
   if (token) {
     jwt.verify(token, process.env.JWT_KEY, (err, decoded) => {

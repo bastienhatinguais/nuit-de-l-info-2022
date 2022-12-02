@@ -67,9 +67,8 @@ export function register(req, res) {
           id: utilisateur.get('id'),
           email: utilisateur.get('email'),
         },
-        'coucou'
+        process.env.JWT_KEY
       );
-
       res.json({
         success: true,
         token,

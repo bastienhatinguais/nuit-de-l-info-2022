@@ -9,7 +9,7 @@ export function api() {
     headers: {
       Accept: 'application/json',
       'Content-Type': 'application/json',
-      'X-XSRF-TOKEN': getLocalStorage('token'),
+      authorization: 'Bearer ' + getLocalStorage('token'),
     },
     responseType: 'json',
   });
