@@ -5,6 +5,7 @@ import Typography from '@mui/material/Typography';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import FormPost from './post/FormPost';
 import { api } from '../utils/api';
+import Timer from './Timer/Timer';
 
 function Accueil() {
   const [openModal, setOpenModal] = useState(false);

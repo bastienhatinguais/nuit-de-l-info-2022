@@ -1,9 +1,9 @@
 import React from 'react';
 
-
+import { Link } from "react-router-dom";
 import { Button, Grid, Typography } from "@mui/material"
 import { Container } from "@mui/system"
-import { Link } from "react-router-dom"
+import Timer from './Timer/Timer';
 
 
 
@@ -30,7 +30,9 @@ function Home() {
                     md={4}
                     style={{ display: 'flex', justifyContent: "center" }}
                 >
-                    <Button variant="contained">Historique des Quizz</Button>
+                    <Link to={"historiqueQuizz"}>
+                        <Button variant="contained">Historique des Quizz</Button>
+                    </Link>
                 </Grid>
                 <Grid
                     item
