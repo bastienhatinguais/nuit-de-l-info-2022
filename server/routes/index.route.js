@@ -1,9 +1,16 @@
 import express from 'express';
-import postRoutes from './post.route';
+import authRoutes from './auth.route';
+import questionRoutes from './question.route';
+import quizzRoutes from './quizz.route';
 
 const router = express.Router();
 
-// mount user routes at /post
-router.use('/post', postRoutes);
+router.use('/auth', authRoutes);
+
+// mount user quizzes at /quizz
+router.use('/quizz', quizzRoutes);
+
+// mount user routes at /question
+router.use('/question', questionRoutes);
 
 export default router;
