@@ -9,6 +9,7 @@ import Accueil from '../components/Accueil';
 import LoginForm from '../components/authentification/loginForm';
 import RequireAuth from '../components/authentification/requireAuth';
 import Layout from '../components/Layout';
+import RegisterForm from '../components/authentification/registerForm';
 
 const router = () => {
   return (
@@ -16,16 +17,36 @@ const router = () => {
       <Route element={<Layout />}>
         <Route path="/" element={<Accueil />} />
         <Route path="/login" element={<LoginForm />} />
-        <Route path="/classement" element={<Classement />} />
-        <Route path="/PageQuizz" element={<PageQuizz />} />
-        <Route path="/quizz" element={<Quizz />} />
-        <Route path="/historiqueQuizz" element={<HistoriqueQuizz />} />
-
+        <Route path="/register" element={<RegisterForm />} />
         <Route
-          path="/protected"
+          path="/classement"
           element={
             <RequireAuth>
-              <h1>OUIIII</h1>
+              <Classement />
+            </RequireAuth>
+          }
+        />
+        <Route
+          path="/PageQuizz"
+          element={
+            <RequireAuth>
+              <PageQuizz />
+            </RequireAuth>
+          }
+        />
+        <Route
+          path="/quizz"
+          element={
+            <RequireAuth>
+              <Quizz />
+            </RequireAuth>
+          }
+        />
+        <Route
+          path="/historiqueQuizz"
+          element={
+            <RequireAuth>
+              <HistoriqueQuizz />
             </RequireAuth>
           }
         />

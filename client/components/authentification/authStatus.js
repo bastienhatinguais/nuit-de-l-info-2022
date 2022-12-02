@@ -1,24 +1,26 @@
 import { useContext } from 'react';
 import AuthContext from '../../context/AuthContext';
 import React from 'react';
+import { Button } from '@mui/material';
+import { Link } from 'react-router-dom';
 
 export default function AuthStatus() {
   let auth = useContext(AuthContext);
-
-  if (!auth.user) {
-    return <p>Vous n'êtes pas connecté.</p>;
-  }
-
-  return (
+  return !auth.user ? (
+    <Link to="/login">
+      <Button color="inherit">Se connecter</Button>
+    </Link>
+  ) : (
     <p>
       Bienvenue {auth.user.prenom}!{' '}
-      <button
+      <Button
+        color="inherit"
         onClick={() => {
           auth.logout();
         }}
       >
-        Sign out
-      </button>
+        Se déconnecter
+      </Button>
     </p>
   );
 }
