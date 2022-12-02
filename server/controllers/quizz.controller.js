@@ -1,5 +1,6 @@
 import HttpStatus from 'http-status-codes';
 import Quizz from '../models/quizz.model';
+import Question from '../models/question.model';
 import * as questionCtrl from '../controllers/question.controller';
 
 /**
@@ -66,23 +67,59 @@ export function store(req, res) {
     const { utilisateur_id } = req.body;
     const allQuestions = questionCtrl.findAll();
     var size = Object.keys(allQuestions).length;
-
+    var tabIndex = []
+    for (let index = 0; index < 10; index++) {
+        const element = array[index];
+        var nb = Math.floor(Math.random() * size)
+        while (tabIndex.includes(nb)) {
+            nb = Math.floor(Math.random() * size)
+        }
+        tabIndex.push(nb);
+    }
+    var quizz_id = 0
     new Quizz({
             utilisateur_id
         })
         .save()
-        .then((quizz) =>
+        .then((quizz) => {
+            quizz_id = quizz.id
             res.json({
                 success: true,
                 data: quizz.toJSON(),
             })
-        )
+        })
         .catch((err) =>
             res.status(HttpStatus.INTERNAL_SERVER_ERROR).json({
                 error: err,
             })
         );
-
+    tabIndex.forEach(index => {
+        new Question({ id: index })
+            .fetch({ withRelated: ['reponses'] })
+            .then((question) => {
+                new Quizz_Question({
+                        quizz_id,
+                        index
+                    })
+                    .save()
+                    .then((quizz_question) =>
+                        res.json({
+                            success: true,
+                            data: quizz_question.toJSON(),
+                        })
+                    )
+                    .catch((err) =>
+                        res.status(HttpStatus.INTERNAL_SERVER_ERROR).json({
+                            error: err,
+                        })
+                    );
+            })
+            .catch((err) =>
+                res.status(HttpStatus.INTERNAL_SERVER_ERROR).json({
+                    error: err,
+                })
+            );
+    });
 }
 
 /**
