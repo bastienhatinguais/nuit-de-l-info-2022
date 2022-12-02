@@ -7,10 +7,11 @@ import Card from '@mui/material/Card';
 import CardMedia from '@mui/material/CardMedia';
 import CardContent from '@mui/material/CardContent';
 
+
+
 function Home() {
     return (
         <Container>
-            <Typography variant="h3">Le sida c'est trop génial</Typography>
             <Grid
                 container
                 alignItems="center"
@@ -31,7 +32,7 @@ function Home() {
                         item
                         style={{ display: 'flex', justifyContent: "center" }}
                     >
-                        <Link to={"quizz"}>
+                        <Link to={"PageQuizz"}>
                             <Button variant="contained"
                                 style={{
                                     minWidth: '30vh',
@@ -68,6 +69,7 @@ function Home() {
                                 }}>Historique des Quizz</Button>
                         </Link>
                     </Grid>
+
                 </Grid>
                 <Grid
                     container
