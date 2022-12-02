@@ -5,36 +5,39 @@ import { Button, Grid, Typography } from "@mui/material"
 import { Container } from "@mui/system"
 import { Link } from "react-router-dom"
 
+
+
 function Home() {
     return (
         <Container>
-            <Grid 
-                container 
+            <Grid
+                container
                 spacing={2}
-                alignItems="center" 
+                alignItems="center"
                 justifyContent="center"
-                style={{ minHeight: '90vh'}}
+                style={{ minHeight: '90vh' }}
             >
-                <Grid 
-                    item 
+                <Grid
+                    item
                     md={4}
-                    style={{display: 'flex', justifyContent: "center"}}
+                    style={{ display: 'flex', justifyContent: "center" }}
                 >
-                    <Button variant="contained">Lancer un Quizz</Button>
+                    <Link to={'PageQuizz'}>  <Button variant="contained">Lancer un Quizz</Button></Link>
+
                 </Grid>
-                <Grid 
-                    item 
+                <Grid
+                    item
                     md={4}
-                    style={{display: 'flex', justifyContent: "center"}}
+                    style={{ display: 'flex', justifyContent: "center" }}
                 >
                     <Button variant="contained">Historique des Quizz</Button>
                 </Grid>
-                <Grid 
-                    item 
+                <Grid
+                    item
                     md={4}
-                    style={{display: 'flex', justifyContent: "center"}}
+                    style={{ display: 'flex', justifyContent: "center" }}
                 >
-                  <Link to={'classement'}>  <Button variant="contained">Classement joueurs</Button></Link>
+                    <Link to={'classement'}>  <Button variant="contained">Classement joueurs</Button></Link>
                 </Grid>
             </Grid>
         </Container>
