@@ -32,7 +32,7 @@ function PageQuizz() {
         listeReponse.forEach((item)=>{
             if(item.id==carteClick && item.estVrai){
                 setReponse("Bonne réponse")
-                setColorReponse("#E8F5E6")
+                setColorReponse("#99FF99 ")
             }
             else if(item.id==carteClick && item.estVrai==false){
                 setReponse("Mauvaise réponse")
@@ -46,7 +46,7 @@ function PageQuizz() {
 
             <Grid sx={{ borderRadius: '16px' }} container spacing={2} alignItems="center"
                 justifyContent="center"
-                style={{ minHeight: '90vh',backgroundColor:'white' }}>
+                style={{ minHeight: '90vh',backgroundColor:'#E2EEFC' }}>
                 <Grid
                     item
                     md={12}
@@ -96,22 +96,23 @@ function PageQuizz() {
     }
     else{
             return(
-                <Container>
+                <Container sx={{marginTop:10}}>
 
             <Grid sx={{ borderRadius: '16px' }} container spacing={2} alignItems="center"
                 justifyContent="center"
-                style={{ minHeight: '90vh',backgroundColor:'white' }}>
+                style={{ minHeight: '90vh',backgroundColor:'#E2EEFC' }}>
                
                <Grid
                     item
                     md={12}
-                    style={{ display: 'flex', justifyContent: "center" }}>
+                    style={{ display: 'flex', justifyContent: "center", marginTop:10 }}>
                     
-                    <Typography sx={{ borderRadius: '16px', border:1,m:-4 }} style={{color:colorReponse}} variant='h3'>{reponse}</Typography>
+                    <Typography sx={{ borderRadius: '16px', border:5,m:-10 }} style={{color:colorReponse}} variant='h3'>{reponse}</Typography>
                 </Grid>
                 <Grid
                     item
                     md={12}
+                    xs={12}
                     style={{ display: 'flex', justifyContent: "center" }}>
                     <CardQuestion question={question}/>
                 </Grid>
@@ -121,6 +122,7 @@ function PageQuizz() {
                         <Grid
                             item
                             md={6}
+                            xs={12}
                             style={{ display: 'flex', justifyContent: "center" }}>
                             <CardAnswer questionValide={questionValide}   item={item} />
                         </Grid>
@@ -131,7 +133,7 @@ function PageQuizz() {
                         md={12}
                         style={{ display: 'flex', justifyContent: "space-around" }}>
                    
-                        <CardExplication explication={question.explication}/>
+                        <CardExplication  explication={question.explication}/>
                     
                         <Button onClick={()=>{setQuestionValide(false)
                                                 setCompleted(completed+1)

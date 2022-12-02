@@ -8,7 +8,7 @@ function CardAnswer(props) {
     const reponse = props.item
     if (props.questionValide) {
         return (
-            <Card onClick={props.handleClick?.bind(this, props.item.id)} sx={{ minWidth: 350, minHeight: 75,borderRadius: '16px' }} style={reponse.estVrai ? { backgroundColor: "#E8F5E6",display:'flex',justifyContent:'center',alignItems:'center' } : { backgroundColor: "#FE6565",display:'flex',justifyContent:'center',alignItems:'center' }}>
+            <Card onClick={props.handleClick?.bind(this, props.item.id)} sx={{ minWidth: 350, minHeight: 75,borderRadius: '16px' }} style={reponse.estVrai ? { backgroundColor: "#99FF99 ",display:'flex',justifyContent:'center',alignItems:'center' } : { backgroundColor: "#FE6565",display:'flex',justifyContent:'center',alignItems:'center' }}>
                 <CardContent>
                     {reponse.text}
                 </CardContent>
