@@ -6,27 +6,27 @@ import schema from '../validators/post.validator';
 const router = express.Router();
 
 router
-  .route('/')
-  .post(validate(schema.storePost), (req, res) => {
-    postCtrl.store(req, res);
-  })
-  .get((req, res) => {
-    postCtrl.findAll(req, res);
-  });
+    .route('/')
+    .post(validate(schema.storePost), (req, res) => {
+        postCtrl.store(req, res);
+    })
+    .get((req, res) => {
+        postCtrl.findAll(req, res);
+    });
 
 router
-  .route('/:id')
+    .route('/:id')
 
-  .get((req, res) => {
+.get((req, res) => {
     postCtrl.findById(req, res);
-  })
+})
 
-  .put(validate(schema.updatePost), (req, res) => {
+.put(validate(schema.updatePost), (req, res) => {
     postCtrl.update(req, res);
-  })
+})
 
-  .delete((req, res) => {
+.delete((req, res) => {
     postCtrl.destroy(req, res);
-  });
+});
 
 export default router;

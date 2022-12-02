@@ -54,97 +54,20 @@ export function findById(req, res) {
 }
 
 /**
- * Store new reponse
+ *  Find reponse by question_id
  *
  * @param {object} req
  * @param {object} res
  * @returns {*}
  */
-export function store(req, res) {
-    console.log(req.body);
-    const { intitule, estVrai, question_id } = req.body;
-    new Reponse({
-            intitule,
-            estVrai,
-            question_id
-        })
-        .save()
-        .then((reponse) =>
+export function findAllByQuestionId(req, res) {
+    Reponse({ question_id: req.params.question_id }).fetch()
+        .then((reponses) => {
             res.json({
-                success: true,
-                data: reponse.toJSON(),
-            })
-        )
-        .catch((err) =>
-            res.status(HttpStatus.INTERNAL_SERVER_ERROR).json({
-                error: err,
-            })
-        );
-}
-
-/**
- * Update reponse by id
- *
- * @param {object} req
- * @param {object} res
- * @returns {*}
- */
-export function update(req, res) {
-    new Reponse({ id: req.params.id })
-        .fetch({ require: true })
-        .then((reponse) =>
-            reponse
-            .save({
-                intitule: req.body.intitule || reponse.get('intitule'),
-                estVrai: req.body.estVrai || reponse.get('estVrai'),
-                question_id: req.body.question_id || reponse.get('question_id'),
-            })
-            .then(() =>
-                res.json({
-                    error: false,
-                    data: reponse.toJSON(),
-                })
-            )
-            .catch((err) =>
-                res.status(HttpStatus.INTERNAL_SERVER_ERROR).json({
-                    error: true,
-                    data: { message: err.message },
-                })
-            )
-        )
-        .catch((err) =>
-            res.status(HttpStatus.INTERNAL_SERVER_ERROR).json({
-                error: err,
-            })
-        );
-}
-
-/**
- * Destroy reponse by id
- *
- * @param {object} req
- * @param {object} res
- * @returns {*}
- */
-export function destroy(req, res) {
-    new Reponse({ id: req.params.id })
-        .fetch({ require: true })
-        .then((reponse) =>
-            reponse
-            .destroy()
-            .then(() =>
-                res.json({
-                    error: false,
-                    data: { message: 'Reponse deleted successfully.' },
-                })
-            )
-            .catch((err) =>
-                res.status(HttpStatus.INTERNAL_SERVER_ERROR).json({
-                    error: true,
-                    data: { message: err.message },
-                })
-            )
-        )
+                error: false,
+                data: reponses.toJSON(),
+            });
+        })
         .catch((err) =>
             res.status(HttpStatus.INTERNAL_SERVER_ERROR).json({
                 error: err,

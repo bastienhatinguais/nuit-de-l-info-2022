@@ -16,17 +16,14 @@ router
 
 router
     .route('/:id')
-
-.get((req, res) => {
-    reponseCtrl.findById(req, res);
-})
-
-.put(validate(schema.updateReponse), (req, res) => {
-    reponseCtrl.update(req, res);
-})
-
-.delete((req, res) => {
-    reponseCtrl.destroy(req, res);
-});
+    .get((req, res) => {
+        reponseCtrl.findAllByQuestionId(req, res);
+    })
+    .put(validate(schema.updateReponse), (req, res) => {
+        reponseCtrl.update(req, res);
+    })
+    .delete((req, res) => {
+        reponseCtrl.destroy(req, res);
+    });
 
 export default router;

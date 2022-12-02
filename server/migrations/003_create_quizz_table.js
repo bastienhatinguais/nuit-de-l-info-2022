@@ -7,8 +7,8 @@
 exports.up = function(knex) {
     return knex.schema.createTable('quizz', (table) => {
         table.increments('id').primary().unsigned();
-        table.float('temps').notNullable();
-        table.integer('score').notNullable();
+        table.float('temps').defaultTo(0.0);
+        table.integer('score').defaultTo(0);
         table.timestamp('date').defaultTo(knex.fn.now());
         table.integer('utilisateur_id').unsigned();
         //table.foreign('utilisateur_id').references('id').inTable('utilisateur').onDelete('cascade');
