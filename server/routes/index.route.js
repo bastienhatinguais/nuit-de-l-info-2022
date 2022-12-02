@@ -1,17 +1,11 @@
 import express from 'express';
-import postRoutes from './post.route';
 import authRoutes from './auth.route';
-import reponseRoutes from './reponse.route';
 import questionRoutes from './question.route';
 import quizzRoutes from './quizz.route';
 
 const router = express.Router();
 
 router.use('/auth', authRoutes);
-router.use('/post', postRoutes);
-
-// mount user routes at /reponse
-router.use('/reponse', reponseRoutes);
 
 // mount user quizzes at /quizz
 router.use('/quizz', quizzRoutes);

@@ -41,7 +41,6 @@
     "jsonwebtoken": "^8.5.1",
     "knex": "^2.3.0",
     "method-override": "^3.0.0",
-    "morgan": "^1.10.0",
     "mysql": "^2.18.1",
     "path": "^0.12.7",
     "react": "^17.0.2",
@@ -49,7 +48,8 @@
     "react-router-dom": "^6.4.3",
     "serve-favicon": "^2.5.0",
     "swagger-autogen": "^2.22.0",
-    "swagger-ui-express": "^4.6.0"
+    "swagger-ui-express": "^4.6.0",
+    "winston": "^3.8.2"
   },
   "devDependencies": {
     "@babel/cli": "^7.19.3",

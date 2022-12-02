@@ -22,12 +22,7 @@ function loginForm() {
   return (
     <Grid container spacing={0} direction="column" alignItems="center" justifyContent="center">
       <Card sx={{ minWidth: 275, maxWidth: 800 }}>
-        <Box
-          component="form"
-          onSubmit={() => console.log('Submit du form !')}
-          noValidate
-          sx={{ m: 2 }}
-        >
+        <Box component="form" noValidate sx={{ m: 2 }}>
           <TextField
             margin="normal"
             required
@@ -63,11 +58,6 @@ function loginForm() {
             Se connecter
           </Button>
           <Grid container>
-            <Grid item xs>
-              <Link href="#" variant="body2">
-                <Button>Mot de passe oublié ?</Button>
-              </Link>
-            </Grid>
             <Grid item>
               <Link to="/register" variant="body2">
                 <Button>Pas de compte ? Inscrivez-vous 😄 </Button>

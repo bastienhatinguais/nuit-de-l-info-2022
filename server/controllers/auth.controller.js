@@ -12,14 +12,12 @@ import Utilisateur from '../models/utilisateur.model';
  */
 export function login(req, res) {
   const { email, motDePasse } = req.body;
-  console.log(req.body);
   Utilisateur.query({
     where: { email: email },
   })
     .fetch()
     .then((utilisateur) => {
       if (utilisateur) {
-        console.log(utilisateur)
         if (bcrypt.compareSync(motDePasse, utilisateur.get('motDePasse'))) {
           const token = jwt.sign(
             {
