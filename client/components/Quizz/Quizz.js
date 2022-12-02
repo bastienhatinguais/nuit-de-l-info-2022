@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import { Container, Grid,Button, Item } from '@mui/material';
 import ProgressBar from './progressBar';
+import Timer from '../Timer/Timer';
 
 function Quizz() {
 
   return (
     <Container>
+    <Timer/>
                 <Grid 
                     container 
                     display="flex"

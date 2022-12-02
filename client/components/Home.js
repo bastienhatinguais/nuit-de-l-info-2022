@@ -1,46 +1,98 @@
 import React from 'react';
 
 import { Link } from "react-router-dom";
-import { Button, Grid, Typography } from "@mui/material"
-import { Container } from "@mui/system"
-import Timer from './Timer/Timer';
+import { Button, Grid, Typography } from "@mui/material";
+import { Container } from "@mui/system";
+import Card from '@mui/material/Card';
+import CardMedia from '@mui/material/CardMedia';
+import CardContent from '@mui/material/CardContent';
 
 function Home() {
     return (
         <Container>
             <Typography variant="h3">Le sida c'est trop génial</Typography>
-            <Timer/>
             <Grid
                 container
-                spacing={2}
                 alignItems="center"
                 justifyContent="center"
                 style={{ minHeight: '90vh' }}
             >
                 <Grid
-                    item
-                    md={4}
-                    style={{ display: 'flex', justifyContent: "center" }}
+                    container
+                    xs={12}
+                    md={3}
+                    spacing={20}
+                    alignItems="center"
+                    direction="column"
+                    justifyContent="center"
+                    style={{ minHeight: '90vh' }}
                 >
-                    <Link to={"quizz"}>
-                    <Button variant="contained">Lancer un Quizz</Button>
-                    </Link>
+                    <Grid
+                        item
+                        style={{ display: 'flex', justifyContent: "center" }}
+                    >
+                        <Link to={"quizz"}>
+                            <Button variant="contained"
+                                style={{
+                                    minWidth: '30vh',
+                                    minHeight: '10vh',
+                                    backgroundColor: '#F2577C',
+                                    borderRadius: '20px',
+                                }}>Lancer un Quizz</Button>
+                        </Link>
+                    </Grid>
+                    <Grid
+                        item
+                        style={{ display: 'flex', justifyContent: "center" }}
+                    >
+                        <Link to={'classement'}>  <Button variant="contained"
+                            style={{
+                                minWidth: '30vh',
+                                minHeight: '10vh',
+                                backgroundColor: '#F2577C',
+                                borderRadius: '20px',
+                            }}>Classement joueurs</Button></Link>
+                    </Grid>
+                    <Grid
+                        item
+                        md={4}
+                        style={{ display: 'flex', justifyContent: "center" }}
+                    >
+                        <Link to={"historiqueQuizz"}>
+                            <Button variant="contained"
+                                style={{
+                                    minWidth: '30vh',
+                                    minHeight: '10vh',
+                                    backgroundColor: '#F2577C',
+                                    borderRadius: '20px',
+                                }}>Historique des Quizz</Button>
+                        </Link>
+                    </Grid>
                 </Grid>
                 <Grid
-                    item
-                    md={4}
-                    style={{ display: 'flex', justifyContent: "center" }}
+                    container
+                    xs={12}
+                    md={9}
+                    alignItems="center"
+                    direction="column"
+                    justifyContent="center"
+                    style={{ minHeight: '90vh' }}
                 >
-                    <Link to={"historiqueQuizz"}>
-                        <Button variant="contained">Historique des Quizz</Button>
-                    </Link>
-                </Grid>
-                <Grid
-                    item
-                    md={4}
-                    style={{ display: 'flex', justifyContent: "center" }}
-                >
-                  <Link to={'classement'}>  <Button variant="contained">Classement joueurs</Button></Link>
+                    <Card sx={{
+                        minWidth: 500,
+                        minHeight: 500,
+                        backgroundColor: '#E2EEFC',
+                        border: '5px solid #F2577C',
+                        borderRadius: '20px',
+                    }}>
+                        <CardContent>
+                        <CardMedia
+                            component="img"
+                            image="img/accueil.png"
+                            alt="Image de la carte"
+                        />
+                        </CardContent>
+                    </Card>
                 </Grid>
             </Grid>
         </Container>
