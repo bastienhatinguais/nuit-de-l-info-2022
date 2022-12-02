@@ -19,6 +19,7 @@ export function login(req, res) {
     .fetch()
     .then((utilisateur) => {
       if (utilisateur) {
+        console.log(utilisateur)
         if (bcrypt.compareSync(motDePasse, utilisateur.get('motDePasse'))) {
           const token = jwt.sign(
             {
