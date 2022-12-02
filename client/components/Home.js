@@ -3,7 +3,6 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import { Button, Grid, Typography } from "@mui/material"
 import { Container } from "@mui/system"
-import Timer from './Timer/Timer';
 
 
 
