@@ -7,7 +7,6 @@ import PageQuizz from '../components/PageQuizz/PageQuizz';
 import HistoriqueQuizz from '../components/Historique/HistoriqueQuizz';
 import Classement from '../components/Classement/Classement';
 
-
 const router = createBrowserRouter([
  
   {

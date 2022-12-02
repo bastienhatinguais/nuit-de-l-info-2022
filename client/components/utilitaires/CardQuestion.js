@@ -7,7 +7,7 @@ import { CardContent } from "@mui/material";
 function CardQuestion(props){
     const question=props.question
  return(
-<Card sx={{ minWidth: 800 , minHeight: 150}} style={{backgroundColor: "#FF7B9B",display:'flex',justifyContent:'center',alignItems:'center'}}>
+<Card sx={{ minWidth: 800 , minHeight: 150,borderRadius: '16px'}} style={{backgroundColor: "#FF7B9B",display:'flex',justifyContent:'center',alignItems:'center'}}>
     <CardContent>
         {question.intitule}
     </CardContent>

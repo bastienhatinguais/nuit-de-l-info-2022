@@ -44,7 +44,7 @@ function PageQuizz() {
         return(
         <Container sx={{ display: 'flex' }}>
 
-            <Grid container spacing={2} alignItems="center"
+            <Grid sx={{ borderRadius: '16px' }} container spacing={2} alignItems="center"
                 justifyContent="center"
                 style={{ minHeight: '90vh',backgroundColor:'white' }}>
                 <Grid
@@ -98,16 +98,16 @@ function PageQuizz() {
             return(
                 <Container>
 
-            <Grid container spacing={2} alignItems="center"
+            <Grid sx={{ borderRadius: '16px' }} container spacing={2} alignItems="center"
                 justifyContent="center"
                 style={{ minHeight: '90vh',backgroundColor:'white' }}>
                
                <Grid
                     item
                     md={12}
-                    style={{ display: 'flex', justifyContent: "left" }}>
+                    style={{ display: 'flex', justifyContent: "center" }}>
                     
-                    <Typography style={{color:colorReponse}} variant='h3'>{reponse}</Typography>
+                    <Typography sx={{ borderRadius: '16px', border:1,m:-4 }} style={{color:colorReponse}} variant='h3'>{reponse}</Typography>
                 </Grid>
                 <Grid
                     item
