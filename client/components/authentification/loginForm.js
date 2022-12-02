@@ -8,10 +8,17 @@ import {
   Button,
   Container,
 } from '@mui/material';
-import React from 'react';
+import React, { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
+import AuthContext from '../../context/AuthContext';
+import { api } from '../../utils/api';
+import { setLocalStorage } from '../../utils/storage';
 
 function loginForm() {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  let auth = useContext(AuthContext);
+
   return (
     <Grid container spacing={0} direction="column" alignItems="center" justifyContent="center">
       <Card sx={{ minWidth: 275, maxWidth: 800 }}>
@@ -30,6 +37,7 @@ function loginForm() {
             name="email"
             autoComplete="email"
             autoFocus
+            onChange={(e) => setEmail(e.target.value)}
           />
           <TextField
             margin="normal"
@@ -40,12 +48,18 @@ function loginForm() {
             type="password"
             id="motDePasse"
             autoComplete="current-password"
+            onChange={(e) => setPassword(e.target.value)}
           />
           <FormControlLabel
             control={<Checkbox value="remember" color="primary" />}
             label="Se souvenir de moi"
           />
-          <Button type="submit" fullWidth variant="contained" sx={{ mt: 3, mb: 2 }}>
+          <Button
+            fullWidth
+            variant="contained"
+            sx={{ mt: 3, mb: 2 }}
+            onClick={() => auth.login(email, password)}
+          >
             Se connecter
           </Button>
           <Grid container>

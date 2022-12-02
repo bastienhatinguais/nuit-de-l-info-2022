@@ -1,23 +1,28 @@
 import React from 'react';
-import { createBrowserRouter } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 
 import Accueil from '../components/Accueil';
 import LoginForm from '../components/authentification/loginForm';
-import RegisterForm from '../components/authentification/registerForm';
+import RequireAuth from '../components/authentification/requireAuth';
+import Layout from '../components/Layout';
 
-const router = createBrowserRouter([
-  {
-    path: '/login',
-    element: <LoginForm />,
-  },
-  {
-    path: '/',
-    element: <Accueil />,
-  },
-  {
-    path: '/register',
-    element: <RegisterForm />,
-  },
-]);
+const router = () => {
+  return (
+    <Routes>
+      <Route element={<Layout />}>
+        <Route path="/" element={<Accueil />} />
+        <Route path="/login" element={<LoginForm />} />
+        <Route
+          path="/protected"
+          element={
+            <RequireAuth>
+              <h1>OUIIII</h1>
+            </RequireAuth>
+          }
+        />
+      </Route>
+    </Routes>
+  );
+};
 
 export default router;

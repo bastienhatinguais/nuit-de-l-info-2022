@@ -88,6 +88,9 @@ function Accueil() {
       <Link to="/login">
         <Button>Se connecter</Button>
       </Link>
+      <Link to="/private-route">
+        <Button>Route privée</Button>
+      </Link>
     </Container>
   );
 }

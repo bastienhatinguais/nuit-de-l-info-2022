@@ -12,6 +12,7 @@ import Utilisateur from '../models/utilisateur.model';
  */
 export function login(req, res) {
   const { email, motDePasse } = req.body;
+  console.log(req.body);
   Utilisateur.query({
     where: { email: email },
   })
@@ -24,13 +25,14 @@ export function login(req, res) {
               id: utilisateur.get('id'),
               email: utilisateur.get('email'),
             },
-            'coucou'
+            process.env.JWT_KEY
           );
 
           res.json({
             success: true,
             token,
-            email: utilisateur.get('email'),
+            nom: utilisateur.get('nom'),
+            prenom: utilisateur.get('prenom'),
           });
         } else {
           res.status(HttpStatus.UNAUTHORIZED).json({
@@ -71,7 +73,8 @@ export function register(req, res) {
       res.json({
         success: true,
         token,
-        email: utilisateur.get('email'),
+        nom: utilisateur.get('nom'),
+        prenom: utilisateur.get('prenom'),
       });
     })
     .catch((err) =>
